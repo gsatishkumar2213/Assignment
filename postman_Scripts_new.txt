@@ -1,0 +1,43 @@
+
+1)
+
+tests["Content-Type is present"] = postman.getResponseHeader("Content-Type");
+
+tests["Status code is 200"] = responseCode.code === 200;
+
+tests["Body matches string"] = responseBody.has("");
+
+
+2)
+tests["Content-Type is present"] = postman.getResponseHeader("Content-Type" );
+
+tests["Status code is 200"] = responseCode.code === 200;
+
+tests["Standard time zone"] = responseBody.has("Pacific Standard Time") || responseBody.has("Central Standard Time") || responseBody.has("Estern Standard Time") || responseBody.has("Mountain Standard Time");
+
+
+3)
+tests["Response time is less than 200ms"] = responseTime < 200;
+
+tests["Content-Type is present"] = postman.getResponseHeader("Content-Type");
+
+tests["Status code is 200"] = responseCode.code === 200;
+
+tests["Body matches string"] = responseBody.has("192.168.86.36");
+
+
+4)
+tests["Status code is 200"] = responseCode.code === 200;
+
+tests["Successful POST request"] = responseCode.code === 200 || responseCode.code === 201;
+
+tests["Body matches string"] = responseBody.has("ACCEPTED");
+
+
+5)
+tests["Status code is 200"] = responseCode.code === 200;
+
+
+tests["Body matches string"] = responseBody.has("name") || responseBody.has("kanna");
+
+
